@@ -32,9 +32,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="guru.png" className="App-logo" alt="logo" />
-      </header>
+     
       <Form></Form>
 
       <RecordContainer records={records}></RecordContainer>

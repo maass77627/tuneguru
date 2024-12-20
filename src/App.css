@@ -6,32 +6,47 @@
 
 
 .App-header {
-  /* position: absolute; */
+   position: relative; 
+  
   height: 200px;
   background-color: rgb(18, 76, 78);
-  /* min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  
   color: white;
 }
 
 .App-logo {
-  /* position: absolute; */
-  left: 0px;
-  top: 0px;
-  /* bottom: 0px; */
+   position: absolute; 
+  left: 0px; 
+  top: -180px;  
+  
 
 }
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
  #form{
   position: absolute;
-  margin-top: 0;
+   top: 175px;
+  z-index: 2;
+  left: 0px; 
   
-} 
+}
+
+#record {
+  float: right;
+  height: 300px;
+  width: 300px;
+
+}
+
+#recordcontainer {
+  margin: auto;
+
+}
+
+#recordimage {
+  height: 300px;
+  width: 300px;
+}
