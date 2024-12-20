@@ -35,18 +35,28 @@
 }
 
 #record {
-  float: right;
-  height: 300px;
-  width: 300px;
+  /* float: right; */
+  height: 600px;
+  width: 600px;
 
 }
 
 #recordcontainer {
   margin: auto;
+  background-color: #0a0a0a;
+  width: 600px;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 20px;
+
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 
 }
 
 #recordimage {
-  height: 300px;
-  width: 300px;
+  height: 600px;
+  width: 600px;
 }
