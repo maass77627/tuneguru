@@ -6,7 +6,7 @@ import './App.css';
 import Form from './Form';
 import RecordContainer from './RecordContainer';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
