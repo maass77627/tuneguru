@@ -1,21 +1,23 @@
 import React from 'react';
-
+import RecordInfo from "./RecordInfo";
 
 
 
 function Record({record}) {
-    console.log(record)
+   console.log(record)
+
+   function handleClick() {
+    console.log("clicked")
+   }
+
     return(
         <div id="record">
-            <img onClick={} id="recordimage" src={record.image}></img>
+            <img onClick={handleClick} id="recordimage" src={record.image} alt="record"></img>
 
 
-            <div id="info">
-             {/* <h4>{record.title}</h4>
-            <p>{record.description}</p> */}
+           
+            <RecordInfo record={record}></RecordInfo>
 
-            </div>
-            
             
         </div>
 

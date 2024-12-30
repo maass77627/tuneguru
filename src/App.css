@@ -28,19 +28,23 @@
   position: absolute;
    top: 175px;
   z-index: 2;
-  left: 0px; 
+  left: 800px; 
   
 }
 
 #record {
+  /* position: absolute;
+  left: 600px; */
   /* float: right; */
   height: 600px;
   width: 600px;
+  z-index: 3;
 
 }
 
 #recordcontainer {
-  left: 100px;
+  /* position: relative; */
+  /* left: 600px; */  
   /* margin: auto; */
   background-color: #0a0a0a;
   width: 600px;
@@ -58,4 +62,32 @@
 #recordimage {
   height: 600px;
   width: 600px;
+}
+
+#artistcontainer {
+  height: 600px;
+  width: 700px;
+  background-color: rgb(143, 202, 66);
+}
+
+#artistimage {
+  height: 100px;
+  width: 100px;
+  border-radius: 25px;
+
+}
+
+#recordinfo{
+  position: absolute;
+  height: 300px;
+  width: 900px;
+  background-color: aquamarine;
+}
+
+.hidden {
+visibility: hidden;
+}
+
+.nothidden {
+visibility: visible;
 }
