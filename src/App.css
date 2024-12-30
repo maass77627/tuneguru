@@ -79,9 +79,15 @@
 
 #recordinfo{
   position: absolute;
+  left: 700px;
   height: 300px;
   width: 900px;
   background-color: aquamarine;
+}
+
+#infoimage{
+  height: 100px;
+  width: 100px;
 }
 
 .hidden {
