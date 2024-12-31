@@ -77,6 +77,14 @@
 
 }
 
+#genre{
+  float: right;
+  border-radius: 50%;
+  /* height: 100px;
+  width: 500px; */
+  /* background-color: blueviolet; */
+}
+
 #recordinfo{
   position: absolute;
   left: 700px;

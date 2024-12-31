@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Form( { records } ) {
+function Form( { records, setNewRecords } ) {
     const [genre, setGenre] = useState([])
+    // const [newrecords, setNewRecords] = useState([])
 
     function handleGenreChange(event) {
        console.log(event.target.value)
@@ -13,7 +14,9 @@ function Form( { records } ) {
     function handleSubmit(e) {
         e.preventDefault()
         console.log(e)
-       let newrecords = records.filter((record) => {record.genre == genre})
+       let newrecords = records.filter((record) => record.genre === genre)
+            console.log(newrecords)
+            setNewRecords(newrecords)
 
     }
 

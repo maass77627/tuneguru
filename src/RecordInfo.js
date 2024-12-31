@@ -1,5 +1,5 @@
 
-
+import React from "react"
 
 function RecordInfo({record}) {
 console.log(record)
@@ -7,7 +7,7 @@ console.log(record)
 
 
     return(
-        <div class="nothidden" id="recordinfo">
+        <div className="nothidden" id="recordinfo">
             <h1>{record.title}</h1>
             <h3>{record.artist}</h3>
             <h4>{record.description}</h4>

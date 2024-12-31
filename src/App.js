@@ -5,6 +5,7 @@ import { useState } from 'react'
 import './App.css';
 import Form from './Form';
 import RecordContainer from './RecordContainer';
+import GenreRecords from './GenreRecords'
 // import ArtistContainer from './ArtistContainer';
 //import RecordInfo from './RecordInfo'
 
@@ -13,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   const [records, setRecords] = useState([])
+  const [newrecords, setNewRecords] = useState([])
 
   // const [artists, setArtists] = useState("")
   //523532
@@ -60,8 +62,8 @@ useEffect(() => {
      {/* <ArtistContainer artists={artists}></ArtistContainer> */}
       {/* <RecordContainer records={records}></RecordContainer> */}
       {/* <ArtistContainer artists={artists}></ArtistContainer> */}
-
-      <Form records={records}></Form>
+      <GenreRecords newrecords={newrecords}></GenreRecords>
+      <Form setNewRecords={setNewRecords} records={records}></Form>
     </div>
   );
 }
