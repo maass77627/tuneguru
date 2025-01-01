@@ -6,7 +6,7 @@ function GenreRecords({newrecords}) {
 
 
     return(
-        <div>
+        <div id="genrerecords">
         {newrecords ? newrecords.map((record) => <Genre record={record}></Genre>) : null}
 
         </div>
