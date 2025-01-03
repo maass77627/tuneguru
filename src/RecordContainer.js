@@ -7,12 +7,10 @@ function RecordContainer({records}) {
     console.log(records)
 
 
-
-
-
-
     return (
         <div id="recordcontainer">
+            <h3> Your Collection </h3>
+           
             {records.map((record) => <Record key={record.id} record={record}></Record>)}
 
         </div>

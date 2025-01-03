@@ -1,16 +1,16 @@
 // import Artist from "./Artist";
-// import React from 'react';
+import React from 'react';
 
-// function ArtistContainer({ artists }) {
+function ArtistContainer() {
 // console.log(artists)
 
 
-//     return (
-//         <div id="artistcontainer">
-//             {artists ? artists.map((artist) => <Artist key={artist.name} artist={artist}></Artist>) : null}
+    return (
+        <div id="artistcontainer">
+            {/* {artists ? artists.map((artist) => <Artist key={artist.name} artist={artist}></Artist>) : null} */}
 
-//         </div>
-//     )
-// }
+        </div>
+    )
+}
 
-// export default ArtistContainer
+export default ArtistContainer

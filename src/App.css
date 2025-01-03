@@ -65,9 +65,12 @@
 }
 
 #artistcontainer {
-  height: 600px;
-  width: 700px;
-  background-color: rgb(143, 202, 66);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 500px;
+  width: 1945px;
+  background-color: rgb(35, 58, 73);
 }
 
 #artistimage {
@@ -81,9 +84,11 @@
   display: inline-block;
     margin-right: 20px;
     position: relative;  
+    color: white;
     /* left: 0px;
     top: 50px; */
-
+  height: 200px;
+  width: 200px;
  /* position: absolute; 
  top: 250px;
  left: 650px; */

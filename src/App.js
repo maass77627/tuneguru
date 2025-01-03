@@ -6,7 +6,8 @@ import './App.css';
 import Form from './Form';
 import RecordContainer from './RecordContainer';
 import GenreRecords from './GenreRecords'
-// import ArtistContainer from './ArtistContainer';
+// import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+ import ArtistContainer from './ArtistContainer';
 //import RecordInfo from './RecordInfo'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,14 +30,27 @@ useEffect(() => {
     
 }, [])
 
-// useEffect(() => {
-//   fetch("https://api.discogs.com/database/search?q=Weezer&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo")
-//   .then((response) => response.json())
-//   .then((json) => {
-//     // setRecords(json)
-//     console.log(json)})
+useEffect(() => {
+  fetch("https://api.discogs.com/database/search?q=Weezer&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo")
+  .then((response) => response.json())
+  .then((json) => {
+    // setRecords(json)
+    console.log(json.results[0])})
     
-// }, [])
+}, [])
+
+useEffect(() => {
+  fetch("http://api.discogs.com/artists/105730/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo")
+  .then((response) => response.json())
+  .then((json) => {
+    // setRecords(json)
+    console.log(json)})
+    
+}, [])
+
+// /artists/{artist_id}/releases{?sort,sort_order}
+//http://api.discogs.com/database/search?type=artist&q=Lorde&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
+// http://api.discogs.com/artists/3317315/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
 
 
 // useEffect(() => {
@@ -58,8 +72,18 @@ useEffect(() => {
     <div className="App">
      
      <RecordContainer records={records}></RecordContainer>
+
+     {/* <BrowserRouter>
+        <NavLink to="/form">Gardens</NavLink><br></br>
+        <NavLink to="/plants">Plants</NavLink>
+         <Routes>
+          <Route path="/garden" element={<GardenerContainer gardeners={gardeners} gardener={current} gardenerid={currentId}/>}></Route>
+          <Route path="/plants" element={<PlantContainer setPlants={setPlants} addPlant={addPlant} deletePlant={deletePlant} plants={plants} gardenerid={currentId} gardener={current}/>}></Route>
+        </Routes>
+       </BrowserRouter> */}
+
      {/* <RecordInfo record={record}></RecordInfo> */}
-     {/* <ArtistContainer artists={artists}></ArtistContainer> */}
+     <ArtistContainer ></ArtistContainer> 
       {/* <RecordContainer records={records}></RecordContainer> */}
       {/* <ArtistContainer artists={artists}></ArtistContainer> */}
       <GenreRecords newrecords={newrecords}></GenreRecords>

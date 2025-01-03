@@ -6,8 +6,12 @@ function GenreRecords({newrecords}) {
 
 
     return(
+
+        
         <div id="genrerecords">
-        {newrecords ? newrecords.map((record) => <Genre record={record}></Genre>) : null}
+            <h3>Recommended Records..</h3>
+            
+        {newrecords ? newrecords.map((record) =>  <Genre record={record}></Genre>) : null}
 
         </div>
     )
