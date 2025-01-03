@@ -44,7 +44,8 @@ function loadArtist(artistname) {
 function loadArtistTracks(artistid) {
   console.log(artistid)
 // useEffect(() => {
-  fetch(`https://api.discogs.com/artists/${artistid}/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
+  // fetch(`https://api.discogs.com/artists/${artistid}/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
+  fetch(`https://api.discogs.com/artists/${artistid}/releases`)
   .then((response) => response.json())
   .then((json) => {
     // setRecords(json)
@@ -54,7 +55,7 @@ function loadArtistTracks(artistid) {
 
 // /artists/{artist_id}/releases{?sort,sort_order}
 //http://api.discogs.com/database/search?type=artist&q=Lorde&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
-// http://api.discogs.com/artists/3317315/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
+// http://api.discogs.com/artists/${artistid}/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
 
 
 // useEffect(() => {
