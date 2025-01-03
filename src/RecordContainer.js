@@ -2,7 +2,7 @@ import React from 'react';
 import Record from './Record';
 
 
-function RecordContainer({records}) {
+function RecordContainer({records, loadArtist}) {
 
     console.log(records)
 
@@ -11,7 +11,7 @@ function RecordContainer({records}) {
         <div id="recordcontainer">
             <h3> Your Collection </h3>
            
-            {records.map((record) => <Record key={record.id} record={record}></Record>)}
+            {records.map((record) => <Record loadArtist={loadArtist} key={record.id} record={record}></Record>)}
 
         </div>
     )

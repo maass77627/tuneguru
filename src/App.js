@@ -30,23 +30,27 @@ useEffect(() => {
     
 }, [])
 
-useEffect(() => {
-  fetch("https://api.discogs.com/database/search?q=Weezer&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo")
+function loadArtist(artistname) {
+// useEffect(() => {
+  fetch(`https://api.discogs.com/database/search?q=${artistname}&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
   .then((response) => response.json())
   .then((json) => {
-    // setRecords(json)
+    loadArtistTracks(json.results[0].id)
     console.log(json.results[0])})
     
-}, [])
+// }, [])
+}
 
-useEffect(() => {
-  fetch("http://api.discogs.com/artists/105730/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo")
+function loadArtistTracks(artistid) {
+  console.log(artistid)
+// useEffect(() => {
+  fetch(`https://api.discogs.com/artists/${artistid}/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
   .then((response) => response.json())
   .then((json) => {
     // setRecords(json)
     console.log(json)})
-    
-}, [])
+  }
+// }, [])
 
 // /artists/{artist_id}/releases{?sort,sort_order}
 //http://api.discogs.com/database/search?type=artist&q=Lorde&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
@@ -71,7 +75,7 @@ useEffect(() => {
   return (
     <div className="App">
      
-     <RecordContainer records={records}></RecordContainer>
+     <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
 
      {/* <BrowserRouter>
         <NavLink to="/form">Gardens</NavLink><br></br>
