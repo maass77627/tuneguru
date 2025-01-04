@@ -13,11 +13,16 @@ import GenreRecords from './GenreRecords'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const CLIENT_ID = "28991f2364bc498ba7978a55778a2b14"
+  const REDIRECT_URI = "http://localhost:3006"
+  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
+  const RESPONSE_TYPE = "token"
 
   const [records, setRecords] = useState([])
   const [newrecords, setNewRecords] = useState([])
-
-  // const [artists, setArtists] = useState("")
+  const [token, setToken] = useState("")
+  const [artists, setArtists] = useState(null)
+  const [releases, setReleases] = useState([])
   //523532
 
 
@@ -29,52 +34,98 @@ useEffect(() => {
     console.log(json)})
     
 }, [])
-
+// str.replace(/ /g, ‘+‘)
 function loadArtist(artistname) {
-// useEffect(() => {
-  fetch(`https://api.discogs.com/database/search?q=${artistname}&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
+  let newname
+  artistname.includes(" ") ? newname = artistname.replace(/ /g, "+") : newname = artistname
+  fetch(`https://api.spotify.com/v1/search?q=artist%3A${newname}&type=artist&limit=1`, {
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+
+  })
   .then((response) => response.json())
   .then((json) => {
-    loadArtistTracks(json.results[0].id)
-    console.log(json.results[0])})
-    
-// }, [])
-}
+    setArtists(json.artists.items[0])
+    console.log(json.artists.items[0])
+    loadArtistTracks(json.artists.items[0].id)})
+  // fetch(`https://api.discogs.com/database/search?q=${artistname}&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
+  // .then((response) => response.json())
+  // .then((json) => {
+  //   loadArtistTracks(json.results[0].id)
+    // setArtists(json.artists.items[0])
+  //   console.log(json.results[0])})
+    }
 
 function loadArtistTracks(artistid) {
-  console.log(artistid)
-// useEffect(() => {
-  // fetch(`https://api.discogs.com/artists/${artistid}/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
-  fetch(`https://api.discogs.com/artists/${artistid}/releases`)
+  fetch(`https://api.spotify.com/v1/artists/${artistid}/albums`, {
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+
+  })
   .then((response) => response.json())
   .then((json) => {
-    // setRecords(json)
-    console.log(json)})
+    setReleases(json.items)
+    console.log(json.items)})
+  // console.log(artistid)
+  // fetch(`https://api.discogs.com/artists/${artistid}/releases`)
+  // .then((response) => response.json())
+  // .then((json) => {
+  //    setReleases(json.releases)
+  //   console.log(json)})
   }
-// }, [])
 
 // /artists/{artist_id}/releases{?sort,sort_order}
 //http://api.discogs.com/database/search?type=artist&q=Lorde&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
 // http://api.discogs.com/artists/${artistid}/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
 
+useEffect(() => {
+  const hash = window.location.hash
+  let token = window.localStorage.getItem("token")
 
-// useEffect(() => {
-//   fetch("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=d1cc06a04bf11333b1c0474a02d1e103&format=json")
-//   .then((response) => response.json())
-//   .then((json) => {
-//     setArtists(json.artists.artist)
-//     console.log(json.artists.artist)})
+  if (!token && hash) {
+      token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+
+      window.location.hash = ""
+      window.localStorage.setItem("token", token)
+  }
+
+  setToken(token)
+
+}, [])
+
+const logout = () => {
+  setToken("")
+  window.localStorage.removeItem("token")
+}
+// 4sQVPSDmfqIxG9W8o2EROX
+// 4Z8W4fKeB5YxbusRsdQVPb
+// https://api.spotify.com/v1/search?q=artist%3AThe+Beatles&type=artist&limit=1
+useEffect(() => {
+  fetch("https://api.spotify.com/v1/artists/3jOstUTkEu2JkjvRdBA5Gu/albums", {
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+
+  })
+  .then((response) => response.json())
+  .then((json) => {
+    // setRecords(json)
+    console.log(json)})
     
-// }, [])
+})
+ 
 
-//d1cc06a04bf11333b1c0474a02d1e103
-//Shared secret	936e9e1e3a6465bc45750e280efd8e91
-// /2.0/?method=chart.gettopartists&api_key=YOUR_API_KEY&format=json
-//http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=d1cc06a04bf11333b1c0474a02d1e103&format=json
 
 
   return (
     <div className="App">
+        {/* <h1>Spotify React</h1> */}
+                {!token ?
+                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
+                        to Spotify</a>
+                    : <button onClick={logout}>Logout</button>}
      
      <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
 
@@ -88,9 +139,7 @@ function loadArtistTracks(artistid) {
        </BrowserRouter> */}
 
      {/* <RecordInfo record={record}></RecordInfo> */}
-     <ArtistContainer ></ArtistContainer> 
-      {/* <RecordContainer records={records}></RecordContainer> */}
-      {/* <ArtistContainer artists={artists}></ArtistContainer> */}
+     { artists ? <ArtistContainer releases={releases} artists={artists} ></ArtistContainer> : null}
       <GenreRecords newrecords={newrecords}></GenreRecords>
       <Form setNewRecords={setNewRecords} records={records}></Form>
     </div>

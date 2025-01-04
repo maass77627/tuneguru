@@ -123,3 +123,18 @@ visibility: hidden;
 .nothidden {
 visibility: visible;
 }
+
+#artisttitle{
+  position: absolute;
+  right: 350px;
+
+}
+
+#artistimage{
+  position: absolute;
+  right: 200px;
+  top: 60px;
+  height: 600px;
+  width: 600px;
+
+}
