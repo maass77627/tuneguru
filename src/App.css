@@ -30,6 +30,7 @@
   z-index: 2;
   left: 800px; 
   
+  
 }
 
 #record {
@@ -68,12 +69,13 @@
   position: relative;
   top: 0px;
   left: 0px;
-  height: 500px;
+  height: 700px;
   width: 1945px;
   background-color: rgb(35, 58, 73);
 }
 
 #artistimage {
+  /* position: fixed; */
   height: 100px;
   width: 100px;
   border-radius: 25px;
@@ -83,6 +85,7 @@
 #genre{
   display: inline-block;
     margin-right: 20px;
+    margin-top: 20px;
     position: relative;  
     color: white;
     /* left: 0px;
@@ -126,7 +129,8 @@ visibility: visible;
 
 #artisttitle{
   position: absolute;
-  right: 350px;
+  top: 10px;
+  right: 370px;
 
 }
 
@@ -134,7 +138,39 @@ visibility: visible;
   position: absolute;
   right: 200px;
   top: 60px;
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
 
 }
+
+#release{
+  display: inline-block;
+    margin-right: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+    position: relative;
+  /* position: absolute; */
+  /* left: 20px; */
+   right: 600px;
+   left: 0px;
+  height: 200px;
+  width: 200px;
+  color: white;
+ }
+
+ #releasediv{
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  right: 700px;
+  /* background-color: blue; */
+  height: 900px;
+  width: 1000px;
+
+ }
+
+ #recordform {
+  height: 600px;
+  width: 600px;
+  background-color: white;
+ }

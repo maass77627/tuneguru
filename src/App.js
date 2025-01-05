@@ -6,8 +6,10 @@ import './App.css';
 import Form from './Form';
 import RecordContainer from './RecordContainer';
 import GenreRecords from './GenreRecords'
-// import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
  import ArtistContainer from './ArtistContainer';
+ import RecordForm from './RecordForm';
+ import WishList from './WishList';
 //import RecordInfo from './RecordInfo'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -126,17 +128,18 @@ useEffect(() => {
                     <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
                         to Spotify</a>
                     : <button onClick={logout}>Logout</button>}
+
+      <BrowserRouter>
+        <NavLink to="/form">Add a Record</NavLink><br></br>
+        <NavLink to="/wishlist">WishList</NavLink>
+         <Routes>
+          <Route path="/form" element={<RecordForm/>}></Route>
+          <Route path="/wishlist" element={<WishList />}></Route>
+        </Routes>
+       </BrowserRouter> 
      
      <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
 
-     {/* <BrowserRouter>
-        <NavLink to="/form">Gardens</NavLink><br></br>
-        <NavLink to="/plants">Plants</NavLink>
-         <Routes>
-          <Route path="/garden" element={<GardenerContainer gardeners={gardeners} gardener={current} gardenerid={currentId}/>}></Route>
-          <Route path="/plants" element={<PlantContainer setPlants={setPlants} addPlant={addPlant} deletePlant={deletePlant} plants={plants} gardenerid={currentId} gardener={current}/>}></Route>
-        </Routes>
-       </BrowserRouter> */}
 
      {/* <RecordInfo record={record}></RecordInfo> */}
      { artists ? <ArtistContainer releases={releases} artists={artists} ></ArtistContainer> : null}
