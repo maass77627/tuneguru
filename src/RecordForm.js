@@ -8,7 +8,7 @@ import { useState } from 'react';
         artist: "weezer",
         genre: "rock",
         description: "fun and happy",
-       image: "weezer.jpg",
+        image: "weezer.jpg",
     })
 
     function handleTitleChange(e) {
@@ -60,15 +60,15 @@ import { useState } from 'react';
         <div id="recordform">
             <form onSubmit={handleSubmit}>
                 <label>title</label>
-                <input onChange={handleTitleChange} type="text" value={formData.title}></input>
+                <input onChange={handleTitleChange} type="text" value={formData.title}></input><br></br>
                 <label>artist</label>
-                <input onChange={handleArtistChange} type="text" value={formData.artist}></input>
+                <input onChange={handleArtistChange} type="text" value={formData.artist}></input><br></br>
                 <label>genre</label>
-                <input onChange={handleGenreChange} type="text" value={formData.genre}></input>
+                <input onChange={handleGenreChange} type="text" value={formData.genre}></input><br></br>
                 <label>description</label>
-                <input onChange={handleDescriptionChange} type="text" value={formData.description}></input>
+                <input onChange={handleDescriptionChange} type="text" value={formData.description}></input><br></br>
                 <label>image</label>
-                <input onChange={handleImageChange} type="text" value={formData.image}></input>
+                <input onChange={handleImageChange} type="text" value={formData.image}></input><br></br>
                 <submit type="submit" value="submit">Submit</submit>
             </form>
 

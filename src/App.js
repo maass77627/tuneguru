@@ -6,10 +6,11 @@ import './App.css';
 import Form from './Form';
 import RecordContainer from './RecordContainer';
 import GenreRecords from './GenreRecords'
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
- import ArtistContainer from './ArtistContainer';
- import RecordForm from './RecordForm';
- import WishList from './WishList';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import ArtistContainer from './ArtistContainer';
+import RecordForm from './RecordForm';
+import WishList from './WishList';
+import Nav from "./Nav";
 //import RecordInfo from './RecordInfo'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,7 +37,7 @@ useEffect(() => {
     console.log(json)})
     
 }, [])
-// str.replace(/ /g, ‘+‘)
+
 function loadArtist(artistname) {
   let newname
   artistname.includes(" ") ? newname = artistname.replace(/ /g, "+") : newname = artistname
@@ -51,12 +52,6 @@ function loadArtist(artistname) {
     setArtists(json.artists.items[0])
     console.log(json.artists.items[0])
     loadArtistTracks(json.artists.items[0].id)})
-  // fetch(`https://api.discogs.com/database/search?q=${artistname}&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo`)
-  // .then((response) => response.json())
-  // .then((json) => {
-  //   loadArtistTracks(json.results[0].id)
-    // setArtists(json.artists.items[0])
-  //   console.log(json.results[0])})
     }
 
 function loadArtistTracks(artistid) {
@@ -70,17 +65,8 @@ function loadArtistTracks(artistid) {
   .then((json) => {
     setReleases(json.items)
     console.log(json.items)})
-  // console.log(artistid)
-  // fetch(`https://api.discogs.com/artists/${artistid}/releases`)
-  // .then((response) => response.json())
-  // .then((json) => {
-  //    setReleases(json.releases)
-  //   console.log(json)})
   }
 
-// /artists/{artist_id}/releases{?sort,sort_order}
-//http://api.discogs.com/database/search?type=artist&q=Lorde&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
-// http://api.discogs.com/artists/${artistid}/releases&token=LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
 
 useEffect(() => {
   const hash = window.location.hash
@@ -101,56 +87,52 @@ const logout = () => {
   setToken("")
   window.localStorage.removeItem("token")
 }
-// 4sQVPSDmfqIxG9W8o2EROX
-// 4Z8W4fKeB5YxbusRsdQVPb
-// https://api.spotify.com/v1/search?q=artist%3AThe+Beatles&type=artist&limit=1
+
 useEffect(() => {
   fetch("https://api.spotify.com/v1/artists/3jOstUTkEu2JkjvRdBA5Gu/albums", {
     headers: {
       Authorization: 'Bearer ' + token
     }
-
   })
   .then((response) => response.json())
   .then((json) => {
     // setRecords(json)
     console.log(json)})
-    
-})
+    })
  
+    const Home = () => (
+      <div className="App">
+      <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
 
+      { artists ? <ArtistContainer releases={releases} artists={artists} ></ArtistContainer> : null}
+       <GenreRecords newrecords={newrecords}></GenreRecords>
+       <Form setNewRecords={setNewRecords} records={records}></Form>
+      </div>
+    );
 
 
   return (
     <div className="App">
-        {/* <h1>Spotify React</h1> */}
                 {!token ?
                     <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
                         to Spotify</a>
                     : <button onClick={logout}>Logout</button>}
 
-      <BrowserRouter>
+       <BrowserRouter>
+       <Nav/>
+       {/* <NavLink to="/">Home</NavLink><br></br>
         <NavLink to="/form">Add a Record</NavLink><br></br>
-        <NavLink to="/wishlist">WishList</NavLink>
+        <NavLink to="/wishlist">WishList</NavLink> */}
          <Routes>
+         <Route path="/" element={Home()}/>
           <Route path="/form" element={<RecordForm/>}></Route>
           <Route path="/wishlist" element={<WishList />}></Route>
         </Routes>
-       </BrowserRouter> 
+       </BrowserRouter>  
      
-     <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
-
-
-     {/* <RecordInfo record={record}></RecordInfo> */}
-     { artists ? <ArtistContainer releases={releases} artists={artists} ></ArtistContainer> : null}
-      <GenreRecords newrecords={newrecords}></GenreRecords>
-      <Form setNewRecords={setNewRecords} records={records}></Form>
-    </div>
+     </div>
   );
 }
 
 export default App;
 
-
-// https://api.discogs.com/oauth/LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo
-//LLpnJGVLeVyBUUbxqvANHvFbrHjjecvWNLqbioFo

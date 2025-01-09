@@ -4,12 +4,9 @@ import React from 'react';
 function ArtistContainer({artists, releases}) {
     console.log("rendered artist container")
      console.log(artists)
-    // console.log(artists.name)
- console.log(artists.images)
- console.log(releases)
-//  console.log(releases.slice(0,8))
-// console.log(releases.slice(0,8))
-let newreleases = releases.slice(0,8)
+    console.log(artists.images)
+    console.log(releases)
+   let newreleases = releases.slice(0,8)
 
     return (
         <div id="artistcontainer">

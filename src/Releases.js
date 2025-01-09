@@ -4,8 +4,7 @@ function Releases({release}) {
 console.log(release)
 
 
-    return (
-        // <div id="releasediv">
+    return ( 
         <Card id="release" >
         <Card.Img  src={release.images[1].url} />
         <Card.ImgOverlay>
@@ -17,7 +16,7 @@ console.log(release)
         </Card.Body>
         </Card.ImgOverlay>
         </Card>
-        // </div>
+        
     )
 }
 

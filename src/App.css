@@ -20,9 +20,6 @@
   top: -180px;  
   }
 
-/* .App-link {
-  color: #61dafb;
-} */
 
  #form{
   position: absolute;
@@ -34,9 +31,6 @@
 }
 
 #record {
-  /* position: absolute;
-  left: 600px; */
-  /* float: right; */
   height: 600px;
   width: 600px;
   z-index: 3;
@@ -44,9 +38,6 @@
 }
 
 #recordcontainer {
-  /* position: relative; */
-  /* left: 600px; */  
-  /* margin: auto; */
   background-color: #0a0a0a;
   width: 600px;
   height: 600px;
@@ -75,7 +66,6 @@
 }
 
 #artistimage {
-  /* position: fixed; */
   height: 100px;
   width: 100px;
   border-radius: 25px;
@@ -88,13 +78,9 @@
     margin-top: 20px;
     position: relative;  
     color: white;
-    /* left: 0px;
-    top: 50px; */
-  height: 200px;
-  width: 200px;
- /* position: absolute; 
- top: 250px;
- left: 650px; */
+    height: 200px;
+    width: 200px;
+    left: 650px; 
   
 }
 
@@ -144,18 +130,16 @@ visibility: visible;
 }
 
 #release{
-  display: inline-block;
+   display: inline-block;
     margin-right: 20px;
     margin-top: 50px;
     margin-left: 20px;
     position: relative;
-  /* position: absolute; */
-  /* left: 20px; */
-   right: 600px;
-   left: 0px;
-  height: 200px;
-  width: 200px;
-  color: white;
+    right: 600px;
+    left: 0px;
+    height: 200px;
+    width: 200px;
+   color: white;
  }
 
  #releasediv{
@@ -163,14 +147,37 @@ visibility: visible;
   left: 50px;
   top: 50px;
   right: 700px;
-  /* background-color: blue; */
   height: 900px;
   width: 1000px;
 
  }
 
  #recordform {
+  position: absolute;
+  left: 700px;
+  height: 200px;
+  width: 500px;
+  background-color: white;
+  z-index: 3;
+  border-radius: 25px;
+ }
+
+
+ #wishlist {
+  position: absolute;
+  left: 500px;
   height: 600px;
   width: 600px;
-  background-color: white;
+  background-color: rgb(163, 17, 119);
+ }
+
+ #nav{
+  position: absolute;
+  right: 20px;
+  top: 0px;
+
+ }
+
+ #links{
+  margin-right: 5px;
  }

@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card';
 function Genre({record}) {
     console.log(record)
 
-    // style={{ height: '10rem', width: '50rem' }}
     return (
        
        
@@ -18,7 +17,6 @@ function Genre({record}) {
                 {record.artist} <br></br>
              {record.description}
             </Card.Text>
-             {/* <Button variant="primary">Go somewhere</Button> */}
             </Card.Body>
             </Card.ImgOverlay>
             </Card>
