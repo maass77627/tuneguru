@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+<<<<<<< HEAD
 import Heart from '@react-sandbox/heart';
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -31,13 +32,32 @@ function Releases({release, wishes, setWishes}) {
         <Card.Img id="cardimg" src={release.images[1].url} />
         <Card.Body>
         <Card.Title>{release.name.substring(0, 13)}</Card.Title>
+=======
+
+function Releases({release}) {
+console.log(release)
+
+
+    return ( 
+        <Card id="release" >
+        <Card.Img  src={release.images[1].url} />
+        <Card.ImgOverlay>
+        <Card.Body>
+        <Card.Title>{release.name}</Card.Title>
+>>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
         <Card.Text>
            {release.release_date} <br></br>
         </Card.Text>
         </Card.Body>
+<<<<<<< HEAD
         </Card>
         </NavLink>
         </div>
+=======
+        </Card.ImgOverlay>
+        </Card>
+        
+>>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
     )
 }
 

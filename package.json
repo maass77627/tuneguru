@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@react-sandbox/heart": "^1.1.0",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
@@ -11,6 +12,13 @@
     "react-bootstrap": "^2.10.7",
     "react-dom": "^19.0.0",
     "react-heart": "^1.0.6",
+=======
+    "bootstrap": "^5.3.3",
+    "cra-template": "1.2.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.7",
+    "react-dom": "^19.0.0",
+>>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1"
   },

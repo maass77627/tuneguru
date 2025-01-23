@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 import React from "react";
 import Track from "./Track";
 import { useLocation } from 'react-router-dom'
@@ -46,6 +47,22 @@ const location = useLocation()
                 {tracks.map((track) => <Track track={track} />)}
             </div>
             </div>
+=======
+import React from "react"
+
+function RecordInfo({record}) {
+console.log(record)
+
+
+
+    return(
+        <div  id="recordinfo">
+            <h1>{record.title}</h1>
+            <h3>{record.artist}</h3>
+            <h4>{record.description}</h4>
+            <img id="infoimage" src={record.image} alt="record"></img>
+
+>>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
         </div>
     )
 }

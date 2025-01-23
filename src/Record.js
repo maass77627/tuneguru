@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 // import RecordInfo from "./RecordInfo";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -6,10 +7,18 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 // import { ListGroup } from 'react-bootstrap/ListGroup';
 
 //  import { useState } from "react";
+=======
+// import RecordInfo from "./RecordInfo";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+
+// import { useState } from "react";
+>>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
 
 function Record({record, loadArtist}) {
    console.log(record)
 
+<<<<<<< HEAD
   //  const [hovering, setHovering] = useState(false)
 
 
@@ -50,6 +59,32 @@ function Record({record, loadArtist}) {
 
   const Example = () => (
     <OverlayTrigger  delay={{ show: 250, hide: 1000 }} placement="right" overlay={popover}>
+=======
+
+
+    function handleClick(e) {
+        // console.log(e)
+        console.log(record.artist)
+        loadArtist(record.artist)
+    // console.log("clicked")
+    }
+
+
+
+const popover = (
+    <Popover id="popover-basic">
+      <Popover.Header as="h3">{record.title}</Popover.Header>
+      <Popover.Header onClick={(e) => handleClick(e)} as="h4">{record.artist}</Popover.Header>
+      <Popover.Body>
+        And here's some <strong>amazing</strong> content. It's very engaging.
+        right?{record.description}
+      </Popover.Body>
+    </Popover>
+  );
+
+  const Example = () => (
+    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+>>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
       <img  id="recordimage" src={record.image} alt="record"></img>
     </OverlayTrigger>
   );
@@ -63,6 +98,10 @@ function Record({record, loadArtist}) {
 
 }
 
+<<<<<<< HEAD
 export default Record
 
 //trigger="click"
+=======
+export default Record
+>>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
