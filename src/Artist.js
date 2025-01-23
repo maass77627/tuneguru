@@ -1,8 +1,6 @@
 
 
-// function Artist({ artist }) {
-//     console.log(artist)
-//     console.log(artist.image[3]["#text"])
+
 
 
 //     return(
