@@ -83,7 +83,7 @@ import Button from 'react-bootstrap/Button';
                 <input id="titleinput" onChange={handleImageChange} type="text" value={formData.image}></input><br></br>
                 <br></br>
                 <Button variant="outline-info" size="lg">Submit</Button>
-                {/* <button>Submit</button> */}
+               
             </form>
         </div>
         </div>

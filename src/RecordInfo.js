@@ -28,24 +28,27 @@ const location = useLocation()
 
     return(
         <div  id="recordinfo">
-            <div id="tran">
+
+            <div id="tranone">
             <h1 id="infotitle">{from.release.name}</h1>
             </div>
-            <div id="tran">
+            
+            <div id="trantwo">
             <h3>{from.release.artist}</h3>
             <h4>{from.release.description}</h4>
             <img id="infoimage" src={from.release.images[2].url} alt="record"></img>
             </div>
 
-            <div id="tran"></div>
+            <div id="tranthree"></div>
             <h3 id="tracktitle">Tracks</h3>
             <div id="tran"></div>
 
-            <div id="tran">
+            <div id="tranfour">
             <div id="tracks">
                 {tracks.map((track) => <Track track={track} />)}
             </div>
             </div>
+
         </div>
     )
 }

@@ -2,11 +2,21 @@ import Releases from "./Releases";
 import React from 'react';
 
 function ArtistContainer({artists, releases, wishes, setWishes}) {
+    
     console.log("rendered artist container")
      console.log(artists)
     console.log(artists.images)
     console.log(releases)
    let newreleases = releases.slice(0,8)
+
+
+//    const Container = () => (
+//     <div id="artistcontainer">
+
+//     </div>
+//    );
+
+
 
     return (
         <div id="artistcontainer">
@@ -21,6 +31,8 @@ function ArtistContainer({artists, releases, wishes, setWishes}) {
              </div>
         </div>
     )
+    
 }
 
-export default ArtistContainer
+// export {ArtistContainer, Container}
+ export default ArtistContainer

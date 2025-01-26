@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+
 import { useEffect } from 'react';
 import React from 'react';
 import { useState } from 'react';
@@ -13,7 +13,6 @@ import RecordInfo from './RecordInfo';
 import WishList from './WishList';
 import Nav from "./Nav";
 import Footer from "./Footer";
-// @ts-ignore
 import RecordInfoTwo from './RecordInfoTwo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -95,17 +94,25 @@ const logout = () => {
   window.localStorage.removeItem("token")
 }
 
+const Container = () => (
+  <div id="artistcontainer">
+
+  </div>
+);
+
  
     const Home = () => (
       <div className="App">
       <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
 
-      { artists ? <ArtistContainer wishes={wishes} setWishes={setWishes} releases={releases} artists={artists} ></ArtistContainer> : null}
+      { artists ? <ArtistContainer wishes={wishes} setWishes={setWishes} releases={releases} artists={artists} ></ArtistContainer> : Container()}
        <GenreRecords newrecords={newrecords}></GenreRecords>
        <Form setNewRecords={setNewRecords} records={records}></Form>
        <Footer></Footer>
       </div>
     );
+
+    
 
 
   return (
