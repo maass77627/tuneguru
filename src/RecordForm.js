@@ -1,9 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-<<<<<<< HEAD
 import Button from 'react-bootstrap/Button';
-=======
->>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
 
     function RecordForm() {
 
@@ -57,7 +54,6 @@ import Button from 'react-bootstrap/Button';
 
             function handleSubmit(e){
                 e.preventDefault()
-<<<<<<< HEAD
 
                 fetch("http://localhost:3000/records", {
                     method: "POST",
@@ -90,27 +86,6 @@ import Button from 'react-bootstrap/Button';
                 {/* <button>Submit</button> */}
             </form>
         </div>
-=======
-                console.log(e.target.value)
-            }
-
-    return(
-        <div id="recordform">
-            <form onSubmit={handleSubmit}>
-                <label>title</label>
-                <input onChange={handleTitleChange} type="text" value={formData.title}></input><br></br>
-                <label>artist</label>
-                <input onChange={handleArtistChange} type="text" value={formData.artist}></input><br></br>
-                <label>genre</label>
-                <input onChange={handleGenreChange} type="text" value={formData.genre}></input><br></br>
-                <label>description</label>
-                <input onChange={handleDescriptionChange} type="text" value={formData.description}></input><br></br>
-                <label>image</label>
-                <input onChange={handleImageChange} type="text" value={formData.image}></input><br></br>
-                <submit type="submit" value="submit">Submit</submit>
-            </form>
-
->>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
         </div>
     )
 }

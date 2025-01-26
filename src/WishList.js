@@ -1,5 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
 import Wish from "./Wish"
 
 
@@ -13,18 +12,6 @@ function WishList({wishes}) {
             {wishes.map((wish) => <Wish wish={wish}/>)}
         </div>
         </div>
-=======
-
-
-
-function WishList() {
-
-    return (
-        <div id="wishlist">
-
-        </div>
-
->>>>>>> 1e780f475ce54677c5ae1e380e09665d107c5c15
     )
 }
 
