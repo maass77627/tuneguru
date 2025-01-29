@@ -30,8 +30,7 @@ function RecordInfoTwo() {
             <h4>{from.record.description}</h4>
             <img id="infoimagetwo" src={from.record.image} alt="record"></img>
             </div>
-
-        </div>
+         </div>
         </div>
 
     )

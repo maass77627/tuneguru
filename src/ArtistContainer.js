@@ -5,9 +5,9 @@ function ArtistContainer({artists, releases, wishes, setWishes}) {
     
     console.log("rendered artist container")
      console.log(artists)
-    console.log(artists.images)
-    console.log(releases)
-   let newreleases = releases.slice(0,8)
+     console.log(artists.images)
+     console.log(releases)
+    let newreleases = releases.slice(0,8)
 
 
 //    const Container = () => (
