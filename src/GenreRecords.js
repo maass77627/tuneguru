@@ -1,7 +1,7 @@
 import Genre from './Genre';
 import React from "react";
 
-function GenreRecords({newrecords}) {
+function GenreRecords({newrecords, token}) {
     console.log(newrecords)
 
 
@@ -12,7 +12,7 @@ function GenreRecords({newrecords}) {
             <div id="border">
             <h3>Recommended Listening..</h3>
             </div>
-        {newrecords ? newrecords.map((record) =>  <Genre key={record.id} record={record}></Genre>) : null}
+        {newrecords ? newrecords.map((record) =>  <Genre token={token} key={record.id} record={record}></Genre>) : null}
 
         </div>
     )

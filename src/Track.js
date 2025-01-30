@@ -6,14 +6,11 @@ function Track({track}) {
 
     return(
         <div id="track">
-            
-             <ListGroup>
+            <ListGroup>
             <ListGroup.Item action variant="info">
-                
-              {track.number}  {track.name}
+                {track.number}  {track.name}
             </ListGroup.Item>
         </ListGroup>
-           
         </div>
     )
 }

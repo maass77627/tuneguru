@@ -3,12 +3,16 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import { NavLink } from "react-router-dom";
 
-function Genre({record}) {
+function Genre({record, token}) {
     console.log(record)
+
+
+
+
 
     return (
        
-        <NavLink to="/recordinfotwo" state={{ from: {record} }}>
+        <NavLink to="/recordinfotwo" state={{ from: {record, token} }}>
            <Card id="genre" >
             <Card.Img  src={record.image} />
              <Card.ImgOverlay> 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import React from "react";
 
+
 function Releases({release, wishes, setWishes}) {
 
   const [active, setActive] = useState(false)
@@ -18,7 +19,8 @@ function Releases({release, wishes, setWishes}) {
 
 
 
-    return ( <div id="release">
+    return (
+         <div id="release">
       <Heart 
          id="heart"
         width={24}

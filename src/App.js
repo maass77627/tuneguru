@@ -39,6 +39,21 @@ useEffect(() => {
     
 }, [])
 
+// function loadAlbum(albumname) {
+//  console.log(albumname)
+//   fetch(`https://api.spotify.com/v1/search?q=${albumname}&type=album`)
+//   .then((response) => response.json())
+//   .then((json) => {
+//     console.log(json)
+//   })
+
+
+// }
+
+// function albumTracks() {
+
+// }
+
 function loadArtist(artistname) {
   let newname
   artistname.includes(" ") ? newname = artistname.replace(/ /g, "+") : newname = artistname
@@ -106,7 +121,7 @@ const Container = () => (
       <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
 
       { artists ? <ArtistContainer wishes={wishes} setWishes={setWishes} releases={releases} artists={artists} ></ArtistContainer> : Container()}
-       <GenreRecords newrecords={newrecords}></GenreRecords>
+       <GenreRecords token={token} newrecords={newrecords}></GenreRecords>
        <Form setNewRecords={setNewRecords} records={records}></Form>
        <Footer></Footer>
       </div>
