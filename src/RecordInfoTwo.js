@@ -1,21 +1,35 @@
 import React, { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
+import { useState } from "react";
 
 
 function RecordInfoTwo() {
 
+    const [albums, setAlbums] = useState([])
+
     const location = useLocation()
      const { from } = location.state
-    console.log(from)
+    console.log(from.record.artist)
     console.log(from.record.title)
     console.log(from.token)
     
 
+     let newartist
+    //  from.record.artist.includes(" ") ? newartist = "+" + from.record.artist.replace(/ /g, "+") : newartist = from.record.artist
+
     let newtitle
-   from.record.title.includes(" ") ? newtitle = from.record.title.replace(/ /g, "+") : newtitle = from.record.title
+//    from.record.title.includes(" ") ? newtitle = from.record.title.replace(/ /g, "+") : newtitle = from.record.title
+
+   //'https://api.spotify.com/v1/search?q=blue+album++weezer&type=album'
+  // 'https://api.spotify.com/v1/search?q=${newtitle}+${newartist}&type=album'
+  //`https://api.spotify.com/v1/search?q=${newtitle}&type=album`
      
-   useEffect((newtitle) => {
-    fetch(`https://api.spotify.com/v1/search?q=${newtitle}&type=album`, {
+   useEffect((newtitle, newartist) => {
+    from.record.title.includes(" ") ? newtitle = from.record.title.replace(/ /g, "+") : newtitle = from.record.title
+    from.record.artist.includes(" ") ? newartist = "+" + from.record.artist.replace(/ /g, "+") : newartist = from.record.artist
+    console.log(newtitle)
+    console.log(newartist)
+    fetch(`https://api.spotify.com/v1/search?q=${newtitle}${newartist}&type=album`, {
         headers: {
           Authorization: 'Bearer ' + from.token
         }
@@ -23,10 +37,20 @@ function RecordInfoTwo() {
       })
       .then((response) => response.json())
       .then((json) => {
-        console.log(json)
-        })
+        console.log(json.albums.items[0].id)
+        setAlbums(json.albums.items)
+        findAlbum(json.albums.items)
 
-   })
+        })
+        // findAlbum(albums)
+
+   }, [])
+
+   function findAlbum(albums) {
+    console.log(albums)
+    let newestalbums = albums.find((album) => album.name === from.record.title)
+    console.log(newestalbums)
+   }
 
 
 
