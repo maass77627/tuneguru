@@ -98,8 +98,8 @@
 
 #tracks{
   position: absolute;
-  top: 0px;
-  left: 1100px;
+  top: 100px;
+  left: 20px;
   height: 700px;
   width: 700px;
 }
@@ -149,7 +149,9 @@ visibility: visible;
 }
 
 #tran{
-  margin: auto;
+  position: absolute;
+  left: 100px;
+  /* margin: auto; */
   height: 800px;
   width: 800px;
   background: rgba(80, 88, 81, 0.6);
@@ -187,8 +189,8 @@ visibility: visible;
 #tranfour{
   position: absolute;
   right: 200px;
-  height: 800px;
-  width: 700px;
+  height: 1000px;
+  width: 800px;
   background: rgba(80, 88, 81, 0.6);
   border-radius: 80px;
 
@@ -287,6 +289,7 @@ visibility: visible;
  }
 
  #recordinfotwo{
+  
   height: 800px;
  }
 
@@ -314,4 +317,10 @@ visibility: visible;
   position: absolute;
   left: 250px;
   top: 5px;
+}
+
+#trackstwo {
+  position: relative;
+  top: -700px; 
+  left: 970px;
 }
