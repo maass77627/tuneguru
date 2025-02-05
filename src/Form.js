@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 function Form( { records, setNewRecords } ) {
     const [genre, setGenre] = useState([])
-    // const [newrecords, setNewRecords] = useState([])
-
+   
     function handleGenreChange(event) {
        console.log(event.target.value)
         setGenre(event.target.value)

@@ -39,20 +39,7 @@ useEffect(() => {
     
 }, [])
 
-// function loadAlbum(albumname) {
-//  console.log(albumname)
-//   fetch(`https://api.spotify.com/v1/search?q=${albumname}&type=album`)
-//   .then((response) => response.json())
-//   .then((json) => {
-//     console.log(json)
-//   })
 
-
-// }
-
-// function albumTracks() {
-
-// }
 
 function loadArtist(artistname) {
   let newname

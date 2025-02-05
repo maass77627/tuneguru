@@ -10,12 +10,6 @@ function ArtistContainer({artists, releases, wishes, setWishes}) {
     let newreleases = releases.slice(0,8)
 
 
-//    const Container = () => (
-//     <div id="artistcontainer">
-
-//     </div>
-//    );
-
 
 
     return (
@@ -34,5 +28,5 @@ function ArtistContainer({artists, releases, wishes, setWishes}) {
     
 }
 
-// export {ArtistContainer, Container}
+
  export default ArtistContainer
