@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 // import Button from 'react-bootstrap/Button';
 
-    function RecordForm() {
+    function RecordForm({ setRecords, records }) {
 
     const [formData, setFormData] = useState({
         title: "blue album",
@@ -64,6 +64,8 @@ import { useState } from 'react';
                 })
                 .then((response) => response.json())
                 .then((json) => {
+                    let updatedrecords = [...records, json]
+                    setRecords(updatedrecords)
                  console.log(json)})
             }
 

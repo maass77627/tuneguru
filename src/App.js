@@ -129,7 +129,7 @@ const Container = () => (
        <Nav/>
         <Routes>
          <Route path="/" element={Home()}/>
-          <Route path="/form" element={<RecordForm/>}></Route>
+          <Route path="/form" element={<RecordForm setRecords={setRecords} records={records}/>}></Route>
           <Route path="/wishlist" element={<WishList  wishes={wishes}/>}></Route>
           <Route path="/recordinfo" element={<RecordInfo token={token}/>}></Route>
           <Route path="/recordinfotwo" element={<RecordInfoTwo />}></Route>

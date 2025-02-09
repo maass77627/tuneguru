@@ -77,12 +77,12 @@ function RecordInfoTwo() {
     return (
         <div id="tran">
         <div id="recordinfotwo">
-            <div  id="recordinfotwo">
+            {/* <div  id="recordinfotwo"> */}
             <h1 id="infotitletwo">{from.record.title}</h1>
             <h3>{from.record.artist}</h3>
             <h4>{from.record.description}</h4>
             <img id="infoimagetwo" src={from.record.image} alt="record"></img>
-            </div>
+            {/* </div> */}
          </div>
 
         <h3 id="tracktwotitle">Tracks</h3>
