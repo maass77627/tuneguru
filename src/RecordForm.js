@@ -54,6 +54,9 @@ import { useState } from 'react';
 
             function handleSubmit(e){
                 e.preventDefault()
+                console.log(e.target)
+                let form = e.target
+                form.className = "hidden"
 
                 fetch("http://localhost:3000/records", {
                     method: "POST",
