@@ -98,30 +98,31 @@
 
 #tracks{
   position: absolute;
-  top: 150px;
+  top: 120px;
   left: 50px;
   height: 700px;
   width: 700px;
 }
 
-#tracktitle{
+#tracktwotitle{
   position: absolute;
   top: 20px;
-  left: 1355px;
+  left: 1270px;
 }
 
 #infotitle{
   position: absolute;
   top: 20px;
-  left: 300px;
+  left: 400px;
 }
 
 #infoimage{
   position: absolute;
-  top: 200px;
-  left: 20px;
-  height: 400px;
-  width: 400px;
+  top: 100px;
+  left: 180px;
+  height: 600px;
+  width: 600px;
+  z-index: 2;
 }
 
 .hidden {
@@ -151,7 +152,7 @@ visibility: visible;
 #tracktitle{
   position: absolute;
   top: 30px;
-  left: 1325px;
+  left: 1350px;
 }
 
 #tran{
@@ -164,33 +165,7 @@ visibility: visible;
   border-radius: 80px;
 }
 
-/* #tranone{
-  position: absolute;
-  left: 100px;
-  height: 800px;
-  width: 400px;
-  background: rgba(80, 88, 81, 0.6);
-  border-radius: 80px;
-} */
-#trantwo{
-  position: absolute;
-  left: 400px;
-  height: 100px;
-  width: 200px;
-  background: rgba(80, 88, 81, 0.6);
-  border-radius: 80px;
-}
 
-
-#tranthree{
-  position: absolute;
-  right: 500px;
-  height: 100px;
-  width: 200px;
-  background: rgba(80, 88, 81, 0.6);
-  border-radius: 80px;
-
-}
 
 #tranfour{
   position: absolute;
