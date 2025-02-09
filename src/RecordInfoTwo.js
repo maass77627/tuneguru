@@ -87,7 +87,7 @@ function RecordInfoTwo() {
 
         <h3 id="tracktwotitle">Tracks</h3>
          <div id="trackstwo">
-         {tracks ? tracks.map((track) => <Track track={track} />) : null}
+         {tracks ? tracks.map((track) => <Track key={track.id} token={from.token} track={track} />) : null}
         </div>
         </div>
 

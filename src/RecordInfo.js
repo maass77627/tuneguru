@@ -45,7 +45,7 @@ const location = useLocation()
 
             <div id="tranfour">
             <div id="tracks">
-                {tracks.map((track) => <Track track={track} />)}
+                {tracks.map((track) => <Track key={track.id} token={token} track={track} />)}
             </div>
             </div>
 

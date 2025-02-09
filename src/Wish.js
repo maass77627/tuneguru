@@ -9,7 +9,7 @@ function Wish({wish}) {
          <div id="wish">
         <ListGroup>
             <ListGroup.Item action variant="info">
-              <img id="wishimg" src={wish.images[2].url} alt="wish"></img> {wish.name}
+          {wish.id}    <img id="wishimg" src={wish.images[2].url} alt="wish"></img> {wish.name}
             </ListGroup.Item>
         </ListGroup>
 
