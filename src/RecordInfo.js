@@ -24,7 +24,7 @@ const location = useLocation()
    .then((json) => {
       setTracks(json.items)
      console.log(json.items)})
-})
+}, [])
 
     return(
         <div  id="recordinfo">

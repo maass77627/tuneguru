@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
     function RecordForm() {
 
@@ -82,7 +82,8 @@ import Button from 'react-bootstrap/Button';
                 <label id="label">Image</label>
                 <input id="titleinput" onChange={handleImageChange} type="text" value={formData.image}></input><br></br>
                 <br></br>
-                <Button variant="outline-info" size="lg">Submit</Button>
+                <input type="submit" value="submit"></input>
+                {/* <Button variant="outline-info" size="lg">Submit</Button> */}
                
             </form>
         </div>

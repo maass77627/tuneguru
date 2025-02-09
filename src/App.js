@@ -42,8 +42,8 @@ useEffect(() => {
 
 
 function loadArtist(artistname) {
-  let newname
-  artistname.includes(" ") ? newname = artistname.replace(/ /g, "+") : newname = artistname
+      let newname
+      artistname.includes(" ") ? newname = artistname.replace(/ /g, "+") : newname = artistname
   fetch(`https://api.spotify.com/v1/search?q=artist%3A${newname}&type=artist&limit=1`, {
     headers: {
       Authorization: 'Bearer ' + token
@@ -56,6 +56,7 @@ function loadArtist(artistname) {
     setArtists(json.artists.items[0])
     loadArtistTracks(json.artists.items[0].id)})
     }
+    
 
 function loadArtistTracks(artistid) {
   console.log("working")
