@@ -36,25 +36,30 @@
 }
 
 #recordcontainer {
+   position: absolute; 
+   z-index: 2;
+  left: 50px;
   background-color: #0a0a0a;
-  width: 600px;
-  height: 600px;
+  width: 630px;
+  height: 630px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
  -ms-overflow-style: none;  
   scrollbar-width: none;  
 }
 
 #recordimage {
-  height: 600px;
-  width: 600px;
+  /* position: absolute; */
+  left: 0px;
+  height: 630px;
+  width: 630px;
 }
 
 #artistcontainer {
-  position: relative;
-  top: 0px;
+  position: absolute;
+  top: 900px;
   left: 0px;
   height: 700px;
   width: 1945px;
@@ -73,8 +78,8 @@
     margin-top: 20px;
     position: relative;  
     color: white;
-    height: 200px;
-    width: 200px;
+    height: 225px;
+    width: 225px;
     left: 50px; 
     top: 100px;
   
@@ -84,6 +89,7 @@
   position: absolute;
   top: 250px;
   left: 650px;
+  background-color: rgb(13, 26, 51);
 }
 
 #recordinfo{
@@ -184,8 +190,8 @@ visibility: visible;
    position: relative;
    right: 600px;
    left: 0px;
-   height: 200px;
-   width: 200px;
+   height: 230px;
+   width: 230px;
    color: white;
  }
 
@@ -232,6 +238,7 @@ visibility: visible;
   width: 800px;
   background-color: rgb(16, 13, 56);
   color: white;
+  font-size: 40px;
  }
 
  #nav{
@@ -275,8 +282,8 @@ visibility: visible;
 
  #wishimg{
   left: 0px;
-  height: 70px;
-  width: 70px;
+  height: 120px;
+  width: 120px;
  }
 
  #background{
@@ -286,8 +293,8 @@ visibility: visible;
 }
 
 #infoimagetwo{
-  height: 600px;
-  width: 600px;
+  height: 550px;
+  width: 550px;
 }
 
 #border{

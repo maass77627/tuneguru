@@ -9,7 +9,7 @@ function WishList({wishes}) {
         <div id="background">
         <div id="wishlist">
             <h1>WishList</h1>
-            {wishes.map((wish) => <Wish key={wish.id} wish={wish}/>)}
+            {wishes.map((wish, index) => <Wish key={index} wish={wish}/>)}
         </div>
         </div>
     )
