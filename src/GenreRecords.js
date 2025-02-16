@@ -9,7 +9,7 @@ function GenreRecords({newrecords, token}) {
 
         
         <div id="genrerecords">
-            <div id="border">
+            <div id="bordertwo">
             <h3>Recommended Listening..</h3>
             </div>
         {newrecords ? newrecords.slice(0, 10).map((record) =>  <Genre token={token} key={record.id} record={record}></Genre>) : null}

@@ -3,6 +3,12 @@
   background-color: cadetblue;
 }
 
+#new{
+  background-color: cadetblue;
+  height: 675px;
+
+}
+
 
 
 .App-header {
@@ -44,9 +50,10 @@
 }
 
 #record {
-  height: 600px;
-  width: 600px;
+  height: 550px;
+  width: 550px;
   z-index: 3;
+  background-color: cadetblue;
 
 }
 
@@ -71,6 +78,8 @@
   height: 630px;
   width: 630px;
 }
+
+
 
 #artistcontainer {
   position: absolute;
@@ -322,7 +331,7 @@ visibility: visible;
   border-radius: 25px;
   position: absolute;
   left: 250px;
-  top: 15px;
+  top: 8px;
 }
 
 #trackstwo {
@@ -333,4 +342,13 @@ visibility: visible;
 
 #infotitletwo{
   font-size: 20px;
+}
+
+#bordertwo{
+  background-color: grey;
+  width: 400px;
+  border-radius: 25px;
+  position: absolute;
+  top: 20px;
+  left: 500px;
 }

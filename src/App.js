@@ -106,14 +106,14 @@ const Container = () => (
 
  
     const Home = () => (
-      <div className="App">
+       <div id="new">
       <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
 
       { artists ? <ArtistContainer wishes={wishes} setWishes={setWishes} releases={releases} artists={artists} ></ArtistContainer> : Container()}
        <GenreRecords token={token} newrecords={newrecords}></GenreRecords>
        <Form setNewRecords={setNewRecords} records={records}></Form>
        <Footer></Footer>
-      </div>
+       </div>
     );
 
     
