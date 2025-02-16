@@ -24,7 +24,7 @@ function Form( { records, setNewRecords } ) {
 return (
     <div id="form">
         <form onSubmit={handleSubmit}>
-        <input onChange={handleGenreChange} type="text" placeholder="type a genre" value={genre} />
+        <input id="genreinput" onChange={handleGenreChange} type="text" placeholder="type a genre" value={genre} />
          <button type="submit">Submit</button>
          </form>
     </div>

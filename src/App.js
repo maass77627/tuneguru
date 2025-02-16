@@ -42,6 +42,7 @@ useEffect(() => {
 
 
 function loadArtist(artistname) {
+  console.log(token)
       let newname
       artistname.includes(" ") ? newname = artistname.replace(/ /g, "+") : newname = artistname
   fetch(`https://api.spotify.com/v1/search?q=artist%3A${newname}&type=artist&limit=1`, {
@@ -121,7 +122,7 @@ const Container = () => (
   return (
     <div className="App">
                 {!token ?
-                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
+                    <a id="link" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
                         to Spotify</a>
                     : <button onClick={logout}>Logout</button>}
 
@@ -131,7 +132,7 @@ const Container = () => (
          <Route path="/" element={Home()}/>
           <Route path="/form" element={<RecordForm setRecords={setRecords} records={records}/>}></Route>
           <Route path="/wishlist" element={<WishList  wishes={wishes}/>}></Route>
-          <Route path="/recordinfo" element={<RecordInfo token={token}/>}></Route>
+          <Route path="/recordinfo" element={<RecordInfo  token={token}/>}></Route>
           <Route path="/recordinfotwo" element={<RecordInfoTwo />}></Route>
         </Routes>
        </BrowserRouter>  

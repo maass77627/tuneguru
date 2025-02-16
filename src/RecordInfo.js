@@ -5,8 +5,8 @@ import { useLocation } from 'react-router-dom'
 import { useState } from "react";
 import { useEffect } from "react";
 
-function RecordInfo({record, token}) {
-console.log(record)
+function RecordInfo({token}) {
+// console.log(record)
 
 const [tracks, setTracks] = useState([])
 
