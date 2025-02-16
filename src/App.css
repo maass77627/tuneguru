@@ -76,7 +76,7 @@
   position: absolute;
   top: 900px;
   left: 0px;
-  height: 700px;
+  height: 750px;
   width: 2000px;
   background-color: rgb(35, 58, 73);
 }
@@ -104,7 +104,7 @@
   position: absolute;
   top: 200px;
   left: 650px;
-  width: 1300px;
+  width: 1500px;
   height: 700px;
   background-color: cadetblue;
 }
@@ -137,6 +137,7 @@
   position: absolute;
   top: 20px;
   left: 400px;
+  font-size: 20px;
 }
 
 #infoimage{
