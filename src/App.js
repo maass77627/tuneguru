@@ -4,6 +4,7 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import Form from './Form';
+// import MusicPlayer from './MusicPlayer';
 import RecordContainer from './RecordContainer';
 import GenreRecords from './GenreRecords'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';

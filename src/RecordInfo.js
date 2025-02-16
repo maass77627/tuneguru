@@ -4,6 +4,7 @@ import Track from "./Track";
 import { useLocation } from 'react-router-dom'
 import { useState } from "react";
 import { useEffect } from "react";
+// import MusicPlayer from "./MusicPlayer";
 
 function RecordInfo({token}) {
 // console.log(record)
@@ -28,6 +29,7 @@ const location = useLocation()
 
     return(
         <div  id="recordinfo">
+            {/* <MusicPlayer token={token}/> */}
 
             
             <h1 id="infotitle">{from.release.name}</h1>

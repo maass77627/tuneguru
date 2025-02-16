@@ -20,6 +20,9 @@ function Track({track, token}) {
 
     }
 
+    //https://api.spotify.com/v1/audio-features/${track.id}
+   // https://open.spotify.com/track/${track.id}
+
 
     return(
         <div id="track">
