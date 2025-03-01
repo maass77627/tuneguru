@@ -10,9 +10,9 @@ function RecordInfoTwo() {
 
     const location = useLocation()
      const { from } = location.state
-    console.log(from.record.artist)
-    console.log(from.record.title)
-    console.log(from.token)
+    // console.log(from.record.artist)
+    // console.log(from.record.title)
+    // console.log(from.token)
     
 
      let newartist
@@ -28,8 +28,8 @@ function RecordInfoTwo() {
    useEffect((newtitle, newartist) => {
     from.record.title.includes(" ") ? newtitle = from.record.title.replace(/ /g, "+") : newtitle = from.record.title
     from.record.artist.includes(" ") ? newartist = "+" + from.record.artist.replace(/ /g, "+") : newartist = from.record.artist
-    console.log(newtitle)
-    console.log(newartist)
+    // console.log(newtitle)
+    // console.log(newartist)
     fetch(`https://api.spotify.com/v1/search?q=${newtitle}${newartist}&type=album`, {
         headers: {
           Authorization: 'Bearer ' + from.token
@@ -38,7 +38,7 @@ function RecordInfoTwo() {
       })
       .then((response) => response.json())
       .then((json) => {
-        console.log(json.albums.items[0].id)
+        // console.log(json.albums.items[0].id)
         getTracks(json.albums.items[0].id)
         setAlbums(json.albums.items)
         findAlbum(json.albums.items)
@@ -49,13 +49,13 @@ function RecordInfoTwo() {
    }, [])
 
    function findAlbum(albums) {
-    console.log(albums)
+    // console.log(albums)
     let newestalbums = albums.find((album) => album.name === from.record.title)
-    console.log(newestalbums)
+    // console.log(newestalbums)
    }
 
    function getTracks(albumid){
-    console.log(albumid)
+    // console.log(albumid)
     fetch(`https://api.spotify.com/v1/albums/${albumid}/tracks`, {
         headers: {
           Authorization: 'Bearer ' + from.token
@@ -64,13 +64,13 @@ function RecordInfoTwo() {
       })
       .then((response) => response.json())
       .then((json) => {
-        console.log(json.items)
+        // console.log(json.items)
         // getTracks(json.albums.items[0].id)
         setTracks(json.items)
         // findAlbum(json.albums.items)
 
         })
-        console.log(tracks)
+        // console.log(tracks)
    }
 
 
