@@ -14,7 +14,7 @@
 .App-header {
    position: relative; 
    height: 200px;
-   width: 2300;
+   /* width: 3000; */
    background-color: rgb(18, 76, 78);
    color: white;
 }
@@ -34,13 +34,17 @@
 
  #form{
   position: absolute;
-  top: 175px;
+  top: 155px;
   z-index: 2;
   left: 800px; 
   
   }
 
   #link{
+    /* top: 100px; */
+    position: absolute;
+    margin-right: 0px;
+
     color: black;
     z-index: 2;
   }
@@ -131,7 +135,7 @@
 
 #tracks{
   position: absolute;
-  top: 120px;
+  top: 100px;
   left: 50px;
   height: 700px;
   width: 700px;
@@ -337,7 +341,7 @@ visibility: visible;
 
 #trackstwo {
   position: relative;
-  top: -700px; 
+  top: -550px; 
   left: 970px;
 }
 
