@@ -16,6 +16,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import RecordInfoTwo from './RecordInfoTwo';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SpotifyPlayer from "./SpotifyPlayer";
 
 function App() {
   const CLIENT_ID = "28991f2364bc498ba7978a55778a2b14"
@@ -23,13 +24,25 @@ function App() {
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
   const RESPONSE_TYPE = "token"
 
+  
+const SCOPES = [
+  "streaming",
+  "user-read-email",
+  "user-read-private",
+  "user-modify-playback-state",
+  "user-read-playback-state"
+];
+// export
+//  const loginUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${encodeURIComponent(SCOPES.join(" "))}&response_type=${RESPONSE_TYPE}`;
+
+
   const [records, setRecords] = useState([])
   const [newrecords, setNewRecords] = useState([])
   const [token, setToken] = useState("")
   const [artists, setArtists] = useState(null)
   const [releases, setReleases] = useState([])
   const [wishes, setWishes] = useState([])
-
+  const [currentTrack, setCurrentTrack] = useState([])
 
 useEffect(() => {
   fetch("http://localhost:3000/records")
@@ -77,6 +90,8 @@ function loadArtistTracks(artistid) {
     console.log(releases)
   }
 
+  
+
 
 useEffect(() => {
   const hash = window.location.hash
@@ -105,10 +120,18 @@ const Container = () => (
   </div>
 );
 
+// function newPlay(uri) {
+//   console.log(uri)
+// }
+
  
     const Home = () => (
        <div id="new">
       <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
+      <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
+      <h1>React Spotify Player 🎧</h1>
+      <SpotifyPlayer currentTrack={currentTrack}  token={token} />
+       </div>
 
       { artists ? <ArtistContainer wishes={wishes} setWishes={setWishes} releases={releases} artists={artists} ></ArtistContainer> : Container()}
        <GenreRecords token={token} newrecords={newrecords}></GenreRecords>
@@ -123,9 +146,13 @@ const Container = () => (
   return (
     <div className="App">
                 {!token ?
-                    <a id="link" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
-                        to Spotify</a>
-                    : <button onClick={logout}>Logout</button>}
+                <div id="spotform">
+                  <a id="link" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${encodeURIComponent(SCOPES.join(" "))}&response_type=${RESPONSE_TYPE}`}>Login
+                    {/* <a id="link" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login */}
+                        to Spotify</a></div>
+                        
+                    :  <div id="spotform"><button onClick={logout}>Logout</button></div>}
+                    
 
        <BrowserRouter>
        <Nav/>
@@ -133,8 +160,8 @@ const Container = () => (
          <Route path="/" element={Home()}/>
           <Route path="/form" element={<RecordForm setRecords={setRecords} records={records}/>}></Route>
           <Route path="/wishlist" element={<WishList  wishes={wishes}/>}></Route>
-          <Route path="/recordinfo" element={<RecordInfo  token={token}/>}></Route>
-          <Route path="/recordinfotwo" element={<RecordInfoTwo />}></Route>
+          <Route path="/recordinfo" element={<RecordInfo setCurrentTrack={setCurrentTrack}   token={token}/>}></Route>
+          <Route path="/recordinfotwo" element={<RecordInfoTwo setCurrentTrack={setCurrentTrack} />}></Route>
         </Routes>
        </BrowserRouter>  
      

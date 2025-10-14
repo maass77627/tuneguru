@@ -4,10 +4,8 @@ import Track from "./Track";
 import { useLocation } from 'react-router-dom'
 import { useState } from "react";
 import { useEffect } from "react";
-// import MusicPlayer from "./MusicPlayer";
 
-function RecordInfo({token}) {
-// console.log(record)
+function RecordInfo({token, setCurrentTrack}) {
 
 const [tracks, setTracks] = useState([])
 
@@ -29,29 +27,18 @@ const location = useLocation()
 
     return(
         <div  id="recordinfo">
-            {/* <MusicPlayer token={token}/> */}
-
-            
-            <h1 id="infotitle">{from.release.name}</h1>
-            
-            
-           
+          <h1 id="infotitle">{from.release.name}</h1>
             <h3>{from.release.artist}</h3>
             <h4>{from.release.description}</h4>
             <img id="infoimage" src={from.release.images[2].url} alt="record"></img>
-            
-
-            
             <h3 id="tracktitle">Tracks</h3>
             <div id="tran"></div>
-
             <div id="tranfour">
             <div id="tracks">
-                {tracks.map((track) => <Track key={track.id} token={token} track={track} />)}
+                {tracks.map((track) => <Track setCurrentTrack={setCurrentTrack}  key={track.id} token={token} track={track} />)}
             </div>
             </div>
-
-        </div>
+           </div>
     )
 }
 

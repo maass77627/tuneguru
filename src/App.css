@@ -1,12 +1,25 @@
 .App {
   text-align: center;
-  background-color: cadetblue;
+   /* background-color: cadetblue;  */
+   background-color: black; 
 }
 
 #new{
-  background-color: cadetblue;
+  background-color: black;
+  /* background-color: cadetblue; */
   height: 675px;
 
+}
+
+#spotform{
+  position: relative;
+  left: 700px;
+  height: 30px;
+  width: 200px;
+  background-color: grey;
+  border-radius: 25px;
+  z-index: 5;
+  /* text-align: center; */
 }
 
 
@@ -15,7 +28,9 @@
    position: relative; 
    height: 200px;
    /* width: 3000; */
-   background-color: rgb(18, 76, 78);
+   /* opacity: 50%; */
+   /* rgba(0, 128, 128, 1); */
+   background-color: rgb(18, 76, 78, 0.5);
    color: white;
 }
 
@@ -37,6 +52,7 @@
   top: 155px;
   z-index: 2;
   left: 800px; 
+  /* background-color: red; */
   
   }
 
@@ -58,7 +74,9 @@
   height: 550px;
   width: 550px;
   z-index: 3;
-  background-color: cadetblue;
+  background-color: black;
+  /* background-color: cadetblue;  */
+  /* background-color: red; */
 
 }
 
@@ -66,7 +84,8 @@
    position: absolute; 
    z-index: 2;
   left: 50px;
-  background-color: #0a0a0a;
+   background-color: black;  
+  /* background-color: #0a0a0a;  */
   width: 630px;
   height: 630px;
   overflow-x: hidden;
@@ -111,6 +130,7 @@
     width: 240px;
     left: 50px; 
     top: 100px;
+    /* background-color: red; */
   
 }
 
@@ -120,7 +140,9 @@
   left: 650px;
   width: 1500px;
   height: 700px;
-  background-color: cadetblue;
+  background-color: black;
+   /* background-color: cadetblue;  */
+  /* background-color: red; */
 }
 
 #recordinfo{
@@ -269,7 +291,8 @@ visibility: visible;
   left: 500px;
   height: 800px;
   width: 800px;
-  background-color: rgb(16, 13, 56);
+  background-color: black;
+  /* background-color: rgb(16, 13, 56); */
   color: white;
   font-size: 40px;
  }
@@ -356,4 +379,12 @@ visibility: visible;
   position: absolute;
   top: 20px;
   left: 500px;
+}
+
+#player{
+  position: relative;
+  background-color: red;
+  height: 300px;
+  width: 500px;
+  z-index: 98;
 }

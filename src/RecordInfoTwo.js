@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import Track from "./Track";
 
-function RecordInfoTwo() {
+function RecordInfoTwo({setCurrentTrack}) {
 
      const [albums, setAlbums] = useState([])
     const [tracks, setTracks] = useState([])
@@ -67,7 +67,7 @@ function RecordInfoTwo() {
             <img id="infoimagetwo" src={from.record.image} alt="record"></img>
            <h3 id="tracktwotitle">Tracks</h3>
          <div id="trackstwo">
-         {tracks ? tracks.map((track) => <Track key={track.id} token={from.token} track={track} />) : null}
+         {tracks ? tracks.map((track) => <Track setCurrentTrack={setCurrentTrack} key={track.id} token={from.token} track={track} />) : null}
         </div>
         </div>
         </div>
