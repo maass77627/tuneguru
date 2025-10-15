@@ -1,6 +1,6 @@
 import React from "react";
 import ListGroup from 'react-bootstrap/ListGroup';
-
+// import SpotifyPlayer from "./SpotifyPlayer";
 
 function Track({track, token, setCurrentTrack}) {
     console.log(token)
@@ -21,8 +21,6 @@ function Track({track, token, setCurrentTrack}) {
                 {track.number}  {track.name}
             </ListGroup.Item>
         </ListGroup>
-
-        
         </div>
     )
 }

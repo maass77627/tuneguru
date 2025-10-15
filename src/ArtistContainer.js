@@ -21,7 +21,7 @@ function ArtistContainer({artists, releases, wishes, setWishes}) {
             { artists ? <img id="artistimage" src={artists.images[0].url} alt="artist"></img> : null} 
           
             <div id="releasediv">
-             {newreleases ? newreleases.map((release) => <Releases wishes={wishes} setWishes={setWishes} key={release.id} release={release}></Releases>) : null} 
+             {newreleases ? newreleases.slice(0,8).map((release) => <Releases wishes={wishes} setWishes={setWishes} key={release.id} release={release}></Releases>) : null} 
              </div>
         </div>
     )

@@ -17,13 +17,13 @@ function Record({record, loadArtist}) {
     const popover = (
       <ListGroup id="popover">
         <ListGroup.Item variant="warning"   onClick={(e) => handleClick(e)}>
-        {record.title}
+        {"click artist for more info"}
         </ListGroup.Item>
         <ListGroup.Item action variant="warning"   onClick={(e) => handleClick(e)}>
         {record.artist}
         </ListGroup.Item>
         <ListGroup.Item variant="warning"   onClick={(e) => handleClick(e)}>
-        {record.description}
+        {/* {record.description} */}
         </ListGroup.Item>
       </ListGroup>
     )

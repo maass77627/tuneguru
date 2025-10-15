@@ -1,11 +1,11 @@
 .App {
   text-align: center;
    /* background-color: cadetblue;  */
-   background-color: black; 
+   background-color: rgb(252, 249, 249); 
 }
 
 #new{
-  background-color: black;
+  background-color: rgb(250, 246, 246);
   /* background-color: cadetblue; */
   height: 675px;
 
@@ -13,10 +13,10 @@
 
 #spotform{
   position: relative;
-  left: 700px;
+  left: 800px;
   height: 30px;
   width: 200px;
-  background-color: grey;
+  background-color: rgb(247, 241, 241);
   border-radius: 25px;
   z-index: 5;
   /* text-align: center; */
@@ -27,7 +27,7 @@
 .App-header {
    position: relative; 
    height: 200px;
-   /* width: 3000; */
+   width: 3000; 
    /* opacity: 50%; */
    /* rgba(0, 128, 128, 1); */
    background-color: rgb(18, 76, 78, 0.5);
@@ -74,7 +74,7 @@
   height: 550px;
   width: 550px;
   z-index: 3;
-  background-color: black;
+  background-color: white;
   /* background-color: cadetblue;  */
   /* background-color: red; */
 
@@ -84,7 +84,7 @@
    position: absolute; 
    z-index: 2;
   left: 50px;
-   background-color: black;  
+   background-color: white;  
   /* background-color: #0a0a0a;  */
   width: 630px;
   height: 630px;
@@ -115,6 +115,7 @@
 }
 
 #artistimage {
+  margin-right: 100px;
   height: 100px;
   width: 100px;
   border-radius: 25px;
@@ -140,9 +141,9 @@
   left: 650px;
   width: 1500px;
   height: 700px;
-  background-color: black;
+  /* background-color: black; */
    /* background-color: cadetblue;  */
-  /* background-color: red; */
+background-color: white; 
 }
 
 #recordinfo{
@@ -151,7 +152,7 @@
   left: 0px;
   height: 1300px;
   width: 2000px;
-  background-color: aquamarine;
+  background-color: rgb(241, 245, 243);
   z-index: 1;
 }
 
@@ -197,16 +198,22 @@ visibility: visible;
   position: absolute;
   
   top: 10px;
-  right: 300px;
+  right: 400px;
 }
 
 #artistimage{
   position: absolute;
-  right: 50px;
+  right: 100px;
   top: 60px;
   height: 600px;
   width: 600px;
 
+}
+
+#delete{
+  position: relative;
+  top: 150px;
+  left: -110px; 
 }
 
 #tracktitle{
@@ -220,7 +227,7 @@ visibility: visible;
   left: 100px;
   height: 800px;
   width: 800px;
-  background: rgba(80, 88, 81, 0.6);
+  background: rgba(247, 248, 247, 0.6);
   border-radius: 80px;
 }
 
@@ -231,7 +238,7 @@ visibility: visible;
   right: 200px;
   height: 1000px;
   width: 800px;
-  background: rgba(80, 88, 81, 0.6);
+  background: rgba(242, 245, 242, 0.6);
   border-radius: 80px;
 
 }
@@ -249,8 +256,13 @@ visibility: visible;
    color: white;
  }
 
- #heart{
-  position: absolute;
+ .heart{
+  position: relative;
+  left: 25px;
+  top: 50px;
+  z-index: 10;
+  background-color: yellow;
+  /* background-color: coral; */
  }
  
 
@@ -291,7 +303,7 @@ visibility: visible;
   left: 500px;
   height: 800px;
   width: 800px;
-  background-color: black;
+  background-color: rgb(202, 200, 200);
   /* background-color: rgb(16, 13, 56); */
   color: white;
   font-size: 40px;
@@ -332,7 +344,7 @@ visibility: visible;
  }
 
  #recordinfotwo{
-  background-color: aquamarine;
+  background-color: rgb(242, 247, 245);
   height: 800px;
  }
 
@@ -343,7 +355,7 @@ visibility: visible;
  }
 
  #background{
-  background-color:  lightblue;
+  background-color:  rgb(247, 249, 250);
   width: 2000px;
   height: 1000px;
 }
@@ -382,9 +394,11 @@ visibility: visible;
 }
 
 #player{
-  position: relative;
-  background-color: red;
-  height: 300px;
+  position: absolute;
+  top: -200px;
+  background-color: rgb(168, 177, 179);
+  height: 200px;
+  left: 950px;
   width: 500px;
   z-index: 98;
 }

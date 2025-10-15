@@ -134,7 +134,7 @@ const Container = () => (
        </div>
 
       { artists ? <ArtistContainer wishes={wishes} setWishes={setWishes} releases={releases} artists={artists} ></ArtistContainer> : Container()}
-       <GenreRecords token={token} newrecords={newrecords}></GenreRecords>
+       <GenreRecords records={records} setRecords={setRecords} setNewRecords={setNewRecords} token={token} newrecords={newrecords}></GenreRecords>
        <Form setNewRecords={setNewRecords} records={records}></Form>
        <Footer></Footer>
        </div>
@@ -159,9 +159,9 @@ const Container = () => (
         <Routes>
          <Route path="/" element={Home()}/>
           <Route path="/form" element={<RecordForm setRecords={setRecords} records={records}/>}></Route>
-          <Route path="/wishlist" element={<WishList  wishes={wishes}/>}></Route>
-          <Route path="/recordinfo" element={<RecordInfo setCurrentTrack={setCurrentTrack}   token={token}/>}></Route>
-          <Route path="/recordinfotwo" element={<RecordInfoTwo setCurrentTrack={setCurrentTrack} />}></Route>
+          <Route path="/wishlist" element={<WishList setWishes={setWishes}  wishes={wishes}/>}></Route>
+          <Route path="/recordinfo" element={<RecordInfo setCurrentTrack={setCurrentTrack} currentTrack={currentTrack}   token={token}/>}></Route>
+          <Route path="/recordinfotwo" element={<RecordInfoTwo currentTrack={currentTrack} token={token} setCurrentTrack={setCurrentTrack} />}></Route>
         </Routes>
        </BrowserRouter>  
      

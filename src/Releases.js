@@ -23,6 +23,8 @@ function Releases({release, wishes, setWishes}) {
          <div id="release">
       <Heart 
          id="heart"
+        //  style={{color: 'yellow'}}
+         className="heart"
         width={24}
         height={24}
         active={active}

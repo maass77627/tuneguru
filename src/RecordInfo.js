@@ -4,8 +4,8 @@ import Track from "./Track";
 import { useLocation } from 'react-router-dom'
 import { useState } from "react";
 import { useEffect } from "react";
-
-function RecordInfo({token, setCurrentTrack}) {
+import SpotifyPlayer from "./SpotifyPlayer";
+function RecordInfo({token, setCurrentTrack, currentTrack}) {
 
 const [tracks, setTracks] = useState([])
 
@@ -27,6 +27,7 @@ const location = useLocation()
 
     return(
         <div  id="recordinfo">
+           <SpotifyPlayer currentTrack={currentTrack} token={token}></SpotifyPlayer> 
           <h1 id="infotitle">{from.release.name}</h1>
             <h3>{from.release.artist}</h3>
             <h4>{from.release.description}</h4>

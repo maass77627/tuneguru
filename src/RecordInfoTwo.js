@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import Track from "./Track";
+ import SpotifyPlayer from "./SpotifyPlayer";
 
-function RecordInfoTwo({setCurrentTrack}) {
+function RecordInfoTwo({setCurrentTrack, currentTrack, token}) {
 
      const [albums, setAlbums] = useState([])
     const [tracks, setTracks] = useState([])
+    // const[toggle, setToggle] = useState(false)
 
     const location = useLocation()
      const { from } = location.state
@@ -66,7 +68,10 @@ function RecordInfoTwo({setCurrentTrack}) {
             <h4>{from.record.description}</h4>
             <img id="infoimagetwo" src={from.record.image} alt="record"></img>
            <h3 id="tracktwotitle">Tracks</h3>
+           {/* <button onClick={setToggle(!toggle)}>show player</button> */}
+          <SpotifyPlayer currentTrack={currentTrack} token={token}></SpotifyPlayer> 
          <div id="trackstwo">
+
          {tracks ? tracks.map((track) => <Track setCurrentTrack={setCurrentTrack} key={track.id} token={from.token} track={track} />) : null}
         </div>
         </div>

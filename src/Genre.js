@@ -2,10 +2,27 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import { NavLink } from "react-router-dom";
 
-function Genre({record, token}) {
+function Genre({record, token, newrecords, setNewRecords, setRecords, records}) {
     console.log(record)
 
+function handleDelete(id) {
+    console.log(id)
 
+    fetch(`http://localhost:3000/records/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    let newrecs = newrecords.filter((rec) => rec.id !== id)
+    setNewRecords(newrecs)
+    let newnewrecs = records.filter((rec) => rec.id !== id)
+    setRecords(newnewrecs)
+     
+      
+
+
+}
 
 
 
@@ -24,7 +41,9 @@ function Genre({record, token}) {
             </Card.Body>
             </Card.ImgOverlay> 
             </Card>
+            <button id="delete" onClick={() => handleDelete(record.id)}>delete</button>
             </NavLink>
+           
         )
 }
 
