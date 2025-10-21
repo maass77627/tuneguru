@@ -1,49 +1,41 @@
+
 import Card from 'react-bootstrap/Card';
 import Heart from '@react-sandbox/heart';
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import React from "react";
+import './Releases.css'; 
 
-
-function Releases({release, wishes, setWishes}) {
-
-  const [active, setActive] = useState(false)
-
+function Releases({ release, wishes, setWishes }) {
+  const [active, setActive] = useState(true);
 
   const handleClick = (release) => {
     console.log(release);
-    setWishes([...wishes, release])
-    setActive(!active)
-    console.log(wishes)
+    setWishes([...wishes, release]);
+    setActive(!active);
+    console.log(wishes);
   };
 
-
-
-    return (
-         <div id="release">
-      <Heart 
-         id="heart"
-        //  style={{color: 'yellow'}}
-         className="heart"
+  return (
+    <div id="release">
+      <Heart
+        className="heart"
         width={24}
         height={24}
         active={active}
         onClick={() => handleClick(release)}
       />
-        <NavLink to="/recordinfo" state={{ from: {release} }}>
-        <Card id="release" >
-        <Card.Img id="cardimg" src={release.images[1].url} />
-        <Card.Body>
-        <Card.Title>{release.name.substring(0, 13)}</Card.Title>
-        <Card.Text>
-           {release.release_date} <br></br>
-        </Card.Text>
-        </Card.Body>
+      <NavLink to="/recordinfo" state={{ from: { release } }}>
+        <Card>
+          <Card.Img src={release.images[1]?.url || release.images[0]?.url} alt={release.name} />
+          <Card.Body>
+            <Card.Title>{release.name.substring(0, 13)}</Card.Title>
+            <Card.Text>{release.release_date}</Card.Text>
+          </Card.Body>
         </Card>
-        </NavLink>
-        </div>
-    )
+      </NavLink>
+    </div>
+  );
 }
 
-export default Releases
-
+export default Releases;

@@ -5,14 +5,12 @@ function Form( { records, setNewRecords } ) {
     const [genre, setGenre] = useState([])
    
     function handleGenreChange(event) {
-       console.log(event.target.value)
         setGenre(event.target.value)
        
     }
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(e)
        let newrecords = records.filter((record) => record.genre === genre)
             console.log(newrecords)
             setNewRecords(newrecords)
@@ -33,3 +31,4 @@ return (
 }
 
 export default Form
+

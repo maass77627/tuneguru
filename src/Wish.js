@@ -6,19 +6,12 @@ import ListGroup from 'react-bootstrap/ListGroup';
 function Wish({wish, wishes, setWishes}) {
 
   function handleDelete(id) {
-    
-  //   fetch(`http://localhost:3000/records/${id}`, {
-  //   method: "DELETE",
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   }
-  // })
     let newws = wishes.filter((w) => w.id !== id)
     setWishes(newws)
 
   }
   
-    console.log(wish.key)
+    
     
     return(
          <div id="wish">

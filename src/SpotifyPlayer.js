@@ -2,6 +2,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
+
+
 export default function SpotifyPlayer({ token, currentTrack }) {
   console.log(currentTrack)
   const [player, setPlayer] = useState(null);
@@ -93,6 +95,7 @@ export default function SpotifyPlayer({ token, currentTrack }) {
   
 
   return (
+    
     <div id="player">
       <h2>🎧 Spotify Player</h2><br></br>
       {currentTrack ? (

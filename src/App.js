@@ -126,10 +126,13 @@ const Container = () => (
 
  
     const Home = () => (
-       <div id="new">
+       <div >
+        <div id="bordertwo">
+            <h3>Recommended Listening..</h3>
+            </div>
       <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
       <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h1>React Spotify Player 🎧</h1>
+      {/* <h1>React Spotify Player 🎧</h1> */}
       <SpotifyPlayer currentTrack={currentTrack}  token={token} />
        </div>
 
@@ -170,4 +173,5 @@ const Container = () => (
 }
 
 export default App;
+
 

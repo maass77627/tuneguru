@@ -1,47 +1,30 @@
+
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import ListGroup from 'react-bootstrap/ListGroup';
 
+function Record({ record, loadArtist }) {
 
-function Record({record, loadArtist}) {
-   console.log(record)
+  function handleClick() {
+    loadArtist(record.artist);
+  }
 
-
-
-    function handleClick(e) {
-        console.log(record.artist)
-        loadArtist(record.artist)
-    }
-
-   
-    const popover = (
-      <ListGroup id="popover">
-        <ListGroup.Item variant="warning"   onClick={(e) => handleClick(e)}>
-        {"click artist for more info"}
-        </ListGroup.Item>
-        <ListGroup.Item action variant="warning"   onClick={(e) => handleClick(e)}>
+  const popover = (
+    <ListGroup id="popover">
+      <ListGroup.Item variant="warning" action onClick={handleClick}>
+        Click artist for more info
+      </ListGroup.Item>
+      <ListGroup.Item variant="warning" action onClick={handleClick}>
         {record.artist}
-        </ListGroup.Item>
-        <ListGroup.Item variant="warning"   onClick={(e) => handleClick(e)}>
-        {/* {record.description} */}
-        </ListGroup.Item>
-      </ListGroup>
-    )
-
-
-
-  const Example = () => (
-    <OverlayTrigger  delay={{ show: 250, hide: 1000 }} placement="right" overlay={popover}>
-      <img  id="recordimage" src={record.image} alt="record"></img>
-    </OverlayTrigger>
+      </ListGroup.Item>
+    </ListGroup>
   );
 
-    return(
-        <Example/>
-        )
-
+  return (
+    <OverlayTrigger delay={{ show: 250, hide: 1000 }} placement="right" overlay={popover}>
+      <img className="record-card" src={record.image} alt={record.title} />
+    </OverlayTrigger>
+  );
 }
 
-export default Record
-
-
+export default Record;
