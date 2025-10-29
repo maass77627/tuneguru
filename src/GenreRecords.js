@@ -1,19 +1,38 @@
-import Genre from './Genre';
-import React from "react";
 
-function GenreRecords({newrecords, token, setNewRecords, records, setRecords}) {
-    console.log(newrecords)
-    
+import React, { useEffect } from "react";
+import Genre from "./Genre";
 
-    return(
+function GenreRecords({ loadArtist, newrecords, token, setNewRecords, records, setRecords }) {
+  console.log(newrecords);
 
-        
-        <div id="genrerecords" >
-        {newrecords ? newrecords.map((record) =>  <Genre  records={records} setRecords={setRecords} token={token} key={record.id} record={record} newrecords={newrecords} setNewRecords={setNewRecords}></Genre>) : null}
+  
+  useEffect(() => {
+    if ((!newrecords || newrecords.length === 0) && records.length > 0) {
+      setNewRecords(records);
+    }
+  }, [records, newrecords, setNewRecords]);
 
-        </div>
-    )
+  return (
+    <div id="genrerecords">
+      {newrecords && newrecords.length > 0 ? (
+        newrecords.map((record) => (
+          <Genre
+            key={record.id}
+            loadArtist={loadArtist}
+            record={record}
+            token={token}
+            newrecords={newrecords}
+            setNewRecords={setNewRecords}
+            records={records}
+            setRecords={setRecords}
+          />
+        ))
+      ) : (
+        <h3 style={{ textAlign: "center", color: "#777" }}>Loading records...</h3>
+      )}
+    </div>
+  );
 }
 
-export default GenreRecords
+export default GenreRecords;
 

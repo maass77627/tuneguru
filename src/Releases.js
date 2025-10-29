@@ -4,7 +4,7 @@ import Heart from '@react-sandbox/heart';
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import React from "react";
-import './Releases.css'; 
+
 
 function Releases({ release, wishes, setWishes }) {
   const [active, setActive] = useState(true);

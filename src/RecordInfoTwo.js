@@ -8,16 +8,11 @@ function RecordInfoTwo({setCurrentTrack, currentTrack, token}) {
 
      const [albums, setAlbums] = useState([])
     const [tracks, setTracks] = useState([])
-    // const[toggle, setToggle] = useState(false)
+ 
 
     const location = useLocation()
      const { from } = location.state
-    
-
-    //  let newartist
-    
-
-    // let newtitle
+  
 
      
    useEffect((newtitle, newartist) => {
@@ -68,7 +63,6 @@ function RecordInfoTwo({setCurrentTrack, currentTrack, token}) {
             <h4>{from.record.description}</h4>
             <img id="infoimagetwo" src={from.record.image} alt="record"></img>
            <h3 id="tracktwotitle">Tracks</h3>
-           {/* <button onClick={setToggle(!toggle)}>show player</button> */}
           <SpotifyPlayer currentTrack={currentTrack} token={token}></SpotifyPlayer> 
          <div id="trackstwo">
 

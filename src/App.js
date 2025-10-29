@@ -4,8 +4,6 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import Form from './Form';
-// import MusicPlayer from './MusicPlayer';
-import RecordContainer from './RecordContainer';
 import GenreRecords from './GenreRecords'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import ArtistContainer from './ArtistContainer';
@@ -16,7 +14,6 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import RecordInfoTwo from './RecordInfoTwo';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SpotifyPlayer from "./SpotifyPlayer";
 
 function App() {
   const CLIENT_ID = "28991f2364bc498ba7978a55778a2b14"
@@ -32,8 +29,7 @@ const SCOPES = [
   "user-modify-playback-state",
   "user-read-playback-state"
 ];
-// export
-//  const loginUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${encodeURIComponent(SCOPES.join(" "))}&response_type=${RESPONSE_TYPE}`;
+
 
 
   const [records, setRecords] = useState([])
@@ -120,26 +116,22 @@ const Container = () => (
   </div>
 );
 
-// function newPlay(uri) {
-//   console.log(uri)
-// }
+
 
  
     const Home = () => (
        <div >
+        <header class="App-header">
+          <img src="guru.png" class="App-logo" alt="logo" /> 
+        </header>
         <div id="bordertwo">
-            <h3>Recommended Listening..</h3>
-            </div>
-      <RecordContainer loadArtist={loadArtist} records={records}></RecordContainer>
-      <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      {/* <h1>React Spotify Player 🎧</h1> */}
-      <SpotifyPlayer currentTrack={currentTrack}  token={token} />
-       </div>
+            <h3>Browse your collection..</h3> 
+        </div>
 
       { artists ? <ArtistContainer wishes={wishes} setWishes={setWishes} releases={releases} artists={artists} ></ArtistContainer> : Container()}
-       <GenreRecords records={records} setRecords={setRecords} setNewRecords={setNewRecords} token={token} newrecords={newrecords}></GenreRecords>
-       <Form setNewRecords={setNewRecords} records={records}></Form>
-       <Footer></Footer>
+      <Form setNewRecords={setNewRecords} records={records}></Form>
+       <GenreRecords loadArtist={loadArtist} records={records} setRecords={setRecords} setNewRecords={setNewRecords} token={token} newrecords={newrecords}></GenreRecords>
+       
        </div>
     );
 
@@ -149,16 +141,16 @@ const Container = () => (
   return (
     <div className="App">
                 {!token ?
-                <div id="spotform">
+                <div className="spotform">
+                  
                   <a id="link" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${encodeURIComponent(SCOPES.join(" "))}&response_type=${RESPONSE_TYPE}`}>Login
-                    {/* <a id="link" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login */}
                         to Spotify</a></div>
                         
-                    :  <div id="spotform"><button onClick={logout}>Logout</button></div>}
+                    :  <div id="spotform"><button onClick={logout}>Logout of Spotify</button></div>}
                     
 
        <BrowserRouter>
-       <Nav/>
+       <Nav/> 
         <Routes>
          <Route path="/" element={Home()}/>
           <Route path="/form" element={<RecordForm setRecords={setRecords} records={records}/>}></Route>
@@ -167,11 +159,10 @@ const Container = () => (
           <Route path="/recordinfotwo" element={<RecordInfoTwo currentTrack={currentTrack} token={token} setCurrentTrack={setCurrentTrack} />}></Route>
         </Routes>
        </BrowserRouter>  
-     
+      <Footer></Footer> 
      </div>
   );
 }
 
 export default App;
-
 

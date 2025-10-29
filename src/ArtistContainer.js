@@ -9,13 +9,13 @@ function ArtistContainer({ artists, releases, wishes, setWishes }) {
   console.log("Artist:", artists);
   console.log("Releases:", releases);
 
-  const newreleases = releases.slice(0, 8);
+  // const newreleases = releases.slice(0, 8);
 
   return (
     <div id="artistcontainer">
-      <div id="border">
-        <h2>More from your Artist..</h2>
-      </div>
+      
+        <h2 id="artistlabel">More from your Artist..</h2>
+      
 
       {artists && (
         <>
@@ -31,8 +31,8 @@ function ArtistContainer({ artists, releases, wishes, setWishes }) {
       )}
 
       <div id="releasediv">
-        {newreleases && newreleases.length > 0 ? (
-          newreleases.map((release) => (
+        {releases && releases.length > 0 ? (
+          releases.map((release) => (
             <Releases
               key={release.id}
               release={release}
@@ -49,3 +49,4 @@ function ArtistContainer({ artists, releases, wishes, setWishes }) {
 }
 
 export default ArtistContainer;
+
