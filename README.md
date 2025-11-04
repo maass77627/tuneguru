@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+🎧 TuneGuru — Music Discovery & Collection App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TuneGuru is a React Single Page Application that helps music lovers discover, collect, and organize albums.
+Users can browse music, add albums to their virtual collection, save favorites, and explore artists — all through a clean and interactive UI.
 
-## Available Scripts
+This version uses a json-server-template backend to quickly stand up a REST API during development.
 
-In the project directory, you can run:
+🛠️ Tech Stack
+Layer	Tools
+Frontend	React, React Router, CSS
+Backend	JSON-Server Template (REST API)
+State	React Hooks / useState & useEffect
+HTTP	Fetch API
+Storage	Local JSON server, optional LocalStorage
+Other	Controlled forms, dynamic routing
+✨ Features
 
-### `npm start`
+✅ Browse album & artist cards
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+✅ Add albums to your personal music library
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ View album details (genre, year, cover art, notes)
 
-### `npm test`
+✅ Edit & delete albums
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Create a wishlist for future listening
 
-### `npm run build`
+✅ Filter by genre / artist
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Search music collection
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Clean, vinyl-inspired UI styling
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🧠 Concepts Demonstrated
 
-### `npm run eject`
+SPA architecture in React
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+JSON-Server as a mock backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Fetch requests for CRUD operations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Controlled form handling in React
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Dynamic UI rendering + state management
 
-## Learn More
+Component structure & prop passing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+RESTful resource patterns
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Local data persistence for rapid prototyping
 
-### Code Splitting
+🚀 Getting Started
+📦 Clone the Repo
+git clone <your-repo-url>
+cd tuneguru
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🧰 Backend Setup (JSON-Server)
+cd backend
+npm install
+npm start
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This will start json-server and create API endpoints like:
 
-### Making a Progressive Web App
+http://localhost:3000/albums
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+💻 Frontend Setup (React)
+cd frontend
+npm install
+npm start
 
-### Advanced Configuration
+🎮 Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+View all albums in your collection
 
-### Deployment
+Add new records with album details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Edit or delete entries
 
-### `npm run build` fails to minify
+Filter and search by genre, name, or artist
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create a wishlist to track albums you want
+
+📸 Demo Screenshots (Add later)
+
+Suggested screenshots:
+
+View	Example
+Home	Album grid
+Album Detail	Cover art + metadata
+Add Album Form	Form UI
+Wishlist	Saved albums
+🔮 Future Enhancements
+
+🎧 Spotify Web API integration for playback
+
+📁 Drag-and-drop playlist maker
+
+👤 User authentication
+
+📱 Mobile-responsive redesign
+
+💿 Discogs API link for vinyl pricing & metadata
+
+📬 Contact
+
+Kelly Maass
+📧 kmaass77627@gmail.com
